@@ -1,0 +1,810 @@
+2025-02-05 15:03:33,191 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/system/config "HTTP/1.1 200 OK"
+2025-02-05 15:03:33,196 - INFO - ParadexApiClient: SystemConfig:SystemConfig(starknet_gateway_url='https://paraclear-mainnet.starknet.io', starknet_fullnode_rpc_url='https://pathfinder.api.prod.paradex.trade/rpc/v0_7', starknet_chain_id='PRIVATE_SN_PARACLEAR_MAINNET', block_explorer_url='https://voyager.prod.paradex.trade/', paraclear_address='0x3ca9388f8d4e04adecbd7b06b9b24a33030a593522248a7bddd87afc0b61a0c', paraclear_decimals=8, paraclear_account_proxy_hash='0x3530cc4759d78042f1b543bf797f5f3d647cde0388c33734cf91b7f7b9314a9', paraclear_account_hash='0x41cb0280ebadaa75f996d8d92c6f265f6d040bb3ba442e5f86a554f1765244e', oracle_address='0x0662d75749ee4b4afa63f891308cb0bae63ce10999d1c332d92b53eb9ac0a0d3', bridged_tokens=[BridgedToken(name='USDC', symbol='USDC', decimals=6, l1_token_address='0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48', l1_bridge_address='0xE3cbE3A636AB6A754e9e41B12b09d09Ce9E53Db3', l2_token_address='0x7348407ebad690fec0cc8597e87dc16ef7b269a655ff72587dafff83d462be2', l2_bridge_address='0x655842814fbfdbe22a1c1ad311d3706ce8a7d337bcb67cd53b0ed7b019c6353')], l1_core_contract_address='0xF338cad020D506e8e3d9B4854986E0EcE6C23640', l1_operator_address='0xC70ae19B5FeAA5c19f576e621d2bad9771864fe2', l1_chain_id='1', liquidation_fee='0.7')
+2025-02-05 15:03:33,508 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/onboarding "HTTP/1.1 200 OK"
+2025-02-05 15:03:33,776 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/auth "HTTP/1.1 200 OK"
+2025-02-05 15:03:33,778 - INFO - l2_address: 0xd9473bc08d139db21d2c89cd8d4b855886bc648a2e45d8523babead678d009
+2025-02-05 15:03:33,778 - INFO - l2_public_key: 0x436c2e727542d94f958083a4e42fd5387e339500e60375a8425847474d2d0fe
+2025-02-05 15:03:33,778 - INFO - l2_private_key: 0x5074ebbc1e075a7cd04ecea4e0188fe761add79a28bf39d62291cde388e58ed
+2025-02-05 15:03:33,785 - INFO - Database table 'trades' ensured.
+2025-02-05 15:03:35,191 - INFO - RL model loaded successfully.
+2025-02-05 15:03:36,304 - INFO - ParadexWebsocketClient: Connected to wss://ws.api.prod.paradex.trade/v1
+2025-02-05 15:03:36,305 - INFO - ParadexWebsocketClient: Authenticated to wss://ws.api.prod.paradex.trade/v1
+2025-02-05 15:03:36,305 - INFO - ParadexWebsocketClient: Subscribe channel:markets_summary params:{} callback:<function on_message at 0x7fa194fe3eb0>
+2025-02-05 15:03:36,305 - INFO - WebSocket connected and subscribed to MARKETS_SUMMARY channel.
+2025-02-05 15:03:36,306 - INFO - ----- New Cycle -----
+2025-02-05 15:03:36,566 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:03:36,567 - INFO - Market Snapshot -> Best Bid: 2771.76, Best Ask: 2771.91, Volatility: 0.00005411577528965468723787671344
+2025-02-05 15:03:36,822 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:03:37,079 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:03:37,083 - INFO - RL entry decision: BUY at 2771.71, SELL at 2771.96
+2025-02-05 15:03:37,195 - INFO - ParadexWebsocketClient: Subscribed to channel:markets_summary
+2025-02-05 15:03:37,340 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/orders?market=ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:03:37,597 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/orders?market=ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:03:37,856 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:03:38,124 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/orders "HTTP/1.1 201 Created"
+2025-02-05 15:03:38,126 - INFO - Order created with ID: 1738767817990201709235950000 at price 2771.71 for size 0.1 (tag: RL_ENTRY)
+2025-02-05 15:03:38,383 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:03:38,664 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/orders "HTTP/1.1 201 Created"
+2025-02-05 15:03:38,665 - INFO - Order created with ID: 1738767818530201709184850001 at price 2771.96 for size 0.1 (tag: RL_ENTRY)
+2025-02-05 15:03:38,669 - INFO - Logged trade: {'trade_type': 'entry', 'side': 'both', 'price': 2771.835, 'order_size': 0.1, 'profit': 0.0, 'additional_info': 'Chosen offset: 0.05'}
+2025-02-05 15:03:38,926 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:03:39,182 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:03:39,183 - INFO - Current Total PnL: 0.1482
+2025-02-05 15:03:44,123 - INFO - ----- New Cycle -----
+2025-02-05 15:03:44,381 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:03:44,383 - INFO - Market Snapshot -> Best Bid: 2773.33, Best Ask: 2773.97, Volatility: 0.0002307428839255133127827952337
+2025-02-05 15:03:44,639 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:03:44,895 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:03:45,154 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:03:45,155 - INFO - SHORT position: entry 2774.95772182, profit target 2747.2081446018, stop loss 2788.83251042910, best_ask 2773.97
+2025-02-05 15:03:45,413 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:03:45,668 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:03:45,669 - INFO - Current Total PnL: -0.2118
+2025-02-05 15:03:48,907 - INFO - ----- New Cycle -----
+2025-02-05 15:03:49,165 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:03:49,167 - INFO - Market Snapshot -> Best Bid: 2772.19, Best Ask: 2772.81, Volatility: 0.0002236248872858431018935978359
+2025-02-05 15:03:49,425 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:03:49,683 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:03:49,942 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:03:50,199 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:03:50,455 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:03:50,456 - INFO - Current Total PnL: 0.0000
+2025-02-05 15:03:54,651 - INFO - ----- New Cycle -----
+2025-02-05 15:03:54,906 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:03:54,907 - INFO - Market Snapshot -> Best Bid: 2769.52, Best Ask: 2769.89, Volatility: 0.0001335882341260170306946046601
+2025-02-05 15:03:55,164 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:03:55,422 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:03:55,424 - INFO - RL entry decision: BUY at 2769.47, SELL at 2769.94
+2025-02-05 15:03:55,679 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/orders?market=ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:03:55,936 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/orders?market=ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:03:56,192 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:03:56,465 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/orders "HTTP/1.1 201 Created"
+2025-02-05 15:03:56,467 - INFO - Order created with ID: 1738767836330201709230340002 at price 2769.47 for size 0.1 (tag: RL_ENTRY)
+2025-02-05 15:03:56,722 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:03:56,990 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/orders "HTTP/1.1 201 Created"
+2025-02-05 15:03:56,993 - INFO - Order created with ID: 1738767836860201709224460000 at price 2769.94 for size 0.1 (tag: RL_ENTRY)
+2025-02-05 15:03:56,997 - INFO - Logged trade: {'trade_type': 'entry', 'side': 'both', 'price': 2769.705, 'order_size': 0.1, 'profit': 0.0, 'additional_info': 'Chosen offset: 0.05'}
+2025-02-05 15:03:57,253 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:03:57,517 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:03:57,518 - INFO - Current Total PnL: 0.1666
+2025-02-05 15:04:01,840 - INFO - ----- New Cycle -----
+2025-02-05 15:04:02,095 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:04:02,096 - INFO - Market Snapshot -> Best Bid: 2770.52, Best Ask: 2770.63, Volatility: 0.00003970294974869837488607960441
+2025-02-05 15:04:02,351 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:02,610 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:02,866 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:02,867 - INFO - SHORT position: entry 2771.13377253, profit target 2743.4224348047, stop loss 2784.98944139265, best_ask 2770.63
+2025-02-05 15:04:03,122 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:03,379 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:04:03,380 - INFO - Current Total PnL: -0.0384
+2025-02-05 15:04:07,615 - INFO - ----- New Cycle -----
+2025-02-05 15:04:07,873 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:04:07,875 - INFO - Market Snapshot -> Best Bid: 2771.06, Best Ask: 2771.7, Volatility: 0.0002309318823113394770836189913
+2025-02-05 15:04:08,139 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:08,399 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:08,659 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:08,660 - INFO - SHORT position: entry 2771.13377253, profit target 2743.4224348047, stop loss 2784.98944139265, best_ask 2771.7
+2025-02-05 15:04:08,915 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:09,172 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:04:09,173 - INFO - Current Total PnL: 0.1156
+2025-02-05 15:04:13,163 - INFO - ----- New Cycle -----
+2025-02-05 15:04:13,421 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:04:13,423 - INFO - Market Snapshot -> Best Bid: 2769.76, Best Ask: 2770.78, Volatility: 0.0003681951578726983290437394189
+2025-02-05 15:04:13,680 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:13,938 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:14,198 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:14,199 - INFO - SHORT position: entry 2771.13377253, profit target 2743.4224348047, stop loss 2784.98944139265, best_ask 2770.78
+2025-02-05 15:04:14,454 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:14,712 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:04:14,713 - INFO - Current Total PnL: 0.0000
+2025-02-05 15:04:19,536 - INFO - ----- New Cycle -----
+2025-02-05 15:04:19,793 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:04:19,794 - INFO - Market Snapshot -> Best Bid: 2770.44, Best Ask: 2771.11, Volatility: 0.0002418096020066587868015266487
+2025-02-05 15:04:20,054 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:20,312 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:20,316 - INFO - RL entry decision: BUY at 2770.39, SELL at 2771.16
+2025-02-05 15:04:20,574 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/orders?market=ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:04:20,830 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/orders?market=ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:04:21,086 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:21,361 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/orders "HTTP/1.1 201 Created"
+2025-02-05 15:04:21,363 - INFO - Order created with ID: 1738767861230201709184850000 at price 2770.39 for size 0.1 (tag: RL_ENTRY)
+2025-02-05 15:04:21,621 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:21,891 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/orders "HTTP/1.1 201 Created"
+2025-02-05 15:04:21,893 - INFO - Order created with ID: 1738767861760201709188270001 at price 2771.16 for size 0.1 (tag: RL_ENTRY)
+2025-02-05 15:04:21,898 - INFO - Logged trade: {'trade_type': 'entry', 'side': 'both', 'price': 2770.775, 'order_size': 0.1, 'profit': 0.0, 'additional_info': 'Chosen offset: 0.05'}
+2025-02-05 15:04:22,154 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:22,413 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:04:22,415 - INFO - Current Total PnL: 0.0000
+2025-02-05 15:04:27,325 - INFO - ----- New Cycle -----
+2025-02-05 15:04:27,581 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:04:27,582 - INFO - Market Snapshot -> Best Bid: 2770.39, Best Ask: 2770.44, Volatility: 0.00001804783759833815511394502268
+2025-02-05 15:04:27,838 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:28,096 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:28,362 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:28,363 - INFO - LONG position: entry 2770.4454089, profit target 2798.149862989, stop loss 2756.5931818555, best_bid 2770.39
+2025-02-05 15:04:28,618 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:28,878 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:04:28,880 - INFO - Current Total PnL: 0.0015
+2025-02-05 15:04:32,713 - INFO - ----- New Cycle -----
+2025-02-05 15:04:32,971 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:04:32,972 - INFO - Market Snapshot -> Best Bid: 2768.05, Best Ask: 2768.3, Volatility: 0.00009031220930757629123881257507
+2025-02-05 15:04:33,229 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:33,488 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:33,744 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:33,745 - INFO - LONG position: entry 2770.4454089, profit target 2798.149862989, stop loss 2756.5931818555, best_bid 2768.05
+2025-02-05 15:04:34,003 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:34,262 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:04:34,264 - INFO - Current Total PnL: -0.2125
+2025-02-05 15:04:38,448 - INFO - ----- New Cycle -----
+2025-02-05 15:04:38,706 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:04:38,708 - INFO - Market Snapshot -> Best Bid: 2769.73, Best Ask: 2769.74, Volatility: 0.000003610453707665173744058547117
+2025-02-05 15:04:38,962 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:39,222 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:39,480 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:39,482 - INFO - LONG position: entry 2770.4454089, profit target 2798.149862989, stop loss 2756.5931818555, best_bid 2769.73
+2025-02-05 15:04:39,739 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:39,996 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:04:39,996 - INFO - Current Total PnL: -0.0715
+2025-02-05 15:04:44,109 - INFO - ----- New Cycle -----
+2025-02-05 15:04:44,364 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:04:44,365 - INFO - Market Snapshot -> Best Bid: 2769.37, Best Ask: 2769.64, Volatility: 0.00009749034574770581746557597838
+2025-02-05 15:04:44,622 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:44,881 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:45,139 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:45,141 - INFO - LONG position: entry 2770.4454089, profit target 2798.149862989, stop loss 2756.5931818555, best_bid 2769.37
+2025-02-05 15:04:45,399 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:45,654 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:04:45,657 - INFO - Current Total PnL: -0.0395
+2025-02-05 15:04:49,888 - INFO - ----- New Cycle -----
+2025-02-05 15:04:50,144 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:04:50,145 - INFO - Market Snapshot -> Best Bid: 2769.5, Best Ask: 2770.36, Volatility: 0.0003104771600726372146588541949
+2025-02-05 15:04:50,402 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:50,658 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:50,661 - INFO - RL entry decision: BUY at 2769.45, SELL at 2770.41
+2025-02-05 15:04:50,919 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/orders?market=ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:04:51,174 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/orders?market=ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:04:51,433 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:51,712 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/orders "HTTP/1.1 201 Created"
+2025-02-05 15:04:51,713 - INFO - Order created with ID: 1738767891580201709278200000 at price 2769.45 for size 0.1 (tag: RL_ENTRY)
+2025-02-05 15:04:51,971 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:52,254 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/orders "HTTP/1.1 201 Created"
+2025-02-05 15:04:52,255 - INFO - Order created with ID: 1738767892120201709190190001 at price 2770.41 for size 0.1 (tag: RL_ENTRY)
+2025-02-05 15:04:52,260 - INFO - Logged trade: {'trade_type': 'entry', 'side': 'both', 'price': 2769.93, 'order_size': 0.1, 'profit': 0.0, 'additional_info': 'Chosen offset: 0.05'}
+2025-02-05 15:04:52,518 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:52,774 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:04:52,776 - INFO - Current Total PnL: -0.0080
+2025-02-05 15:04:55,997 - INFO - ----- New Cycle -----
+2025-02-05 15:04:56,252 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:04:56,253 - INFO - Market Snapshot -> Best Bid: 2769.82, Best Ask: 2770.02, Volatility: 0.00007220425138632162661737523105
+2025-02-05 15:04:56,508 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:56,765 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:56,768 - INFO - RL entry decision: BUY at 2769.77, SELL at 2770.07
+2025-02-05 15:04:57,024 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/orders?market=ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:04:57,280 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/orders?market=ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:04:57,537 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:57,820 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/orders "HTTP/1.1 201 Created"
+2025-02-05 15:04:57,821 - INFO - Order created with ID: 1738767897690201709191980000 at price 2769.77 for size 0.1 (tag: RL_ENTRY)
+2025-02-05 15:04:58,075 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:58,343 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/orders "HTTP/1.1 201 Created"
+2025-02-05 15:04:58,344 - INFO - Order created with ID: 1738767898210201709278200001 at price 2770.07 for size 0.1 (tag: RL_ENTRY)
+2025-02-05 15:04:58,347 - INFO - Logged trade: {'trade_type': 'entry', 'side': 'both', 'price': 2769.92, 'order_size': 0.1, 'profit': 0.0, 'additional_info': 'Chosen offset: 0.05'}
+2025-02-05 15:04:58,602 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:04:58,860 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:04:58,860 - INFO - Current Total PnL: -0.0014
+2025-02-05 15:05:02,451 - INFO - ----- New Cycle -----
+2025-02-05 15:05:02,706 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:05:02,708 - INFO - Market Snapshot -> Best Bid: 2770.03, Best Ask: 2770.27, Volatility: 0.00008663790769452917712037254300
+2025-02-05 15:05:02,963 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:03,222 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:03,484 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:03,743 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:04,000 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:05:04,001 - INFO - Current Total PnL: 0.0000
+2025-02-05 15:05:07,536 - INFO - ----- New Cycle -----
+2025-02-05 15:05:07,793 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:05:07,795 - INFO - Market Snapshot -> Best Bid: 2771.72, Best Ask: 2771.73, Volatility: 0.000003607861530274468065915630158
+2025-02-05 15:05:08,052 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:08,311 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:08,314 - INFO - RL entry decision: BUY at 2771.67, SELL at 2771.78
+2025-02-05 15:05:08,572 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/orders?market=ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:05:08,830 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/orders?market=ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:05:09,090 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:09,362 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/orders "HTTP/1.1 201 Created"
+2025-02-05 15:05:09,363 - INFO - Order created with ID: 1738767909230201709235950000 at price 2771.67 for size 0.1 (tag: RL_ENTRY)
+2025-02-05 15:05:09,624 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:09,906 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/orders "HTTP/1.1 201 Created"
+2025-02-05 15:05:09,907 - INFO - Order created with ID: 1738767909770201709184850002 at price 2771.78 for size 0.1 (tag: RL_ENTRY)
+2025-02-05 15:05:09,910 - INFO - Logged trade: {'trade_type': 'entry', 'side': 'both', 'price': 2771.725, 'order_size': 0.1, 'profit': 0.0, 'additional_info': 'Chosen offset: 0.05'}
+2025-02-05 15:05:10,167 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:10,425 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:05:10,427 - INFO - Current Total PnL: 0.0408
+2025-02-05 15:05:13,498 - INFO - ----- New Cycle -----
+2025-02-05 15:05:13,753 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:05:13,755 - INFO - Market Snapshot -> Best Bid: 2771.07, Best Ask: 2771.55, Volatility: 0.0001732032865323619515680310034
+2025-02-05 15:05:14,013 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:14,269 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:14,273 - INFO - RL entry decision: BUY at 2771.02, SELL at 2771.60
+2025-02-05 15:05:14,530 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/orders?market=ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:05:14,787 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/orders?market=ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:05:15,047 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:15,317 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/orders "HTTP/1.1 201 Created"
+2025-02-05 15:05:15,318 - INFO - Order created with ID: 1738767915180201709230340001 at price 2771.02 for size 0.1 (tag: RL_ENTRY)
+2025-02-05 15:05:15,574 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:15,852 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/orders "HTTP/1.1 201 Created"
+2025-02-05 15:05:15,853 - INFO - Order created with ID: 1738767915720201709188270000 at price 2771.60 for size 0.1 (tag: RL_ENTRY)
+2025-02-05 15:05:15,857 - INFO - Logged trade: {'trade_type': 'entry', 'side': 'both', 'price': 2771.31, 'order_size': 0.1, 'profit': 0.0, 'additional_info': 'Chosen offset: 0.05'}
+2025-02-05 15:05:16,113 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:16,372 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:05:16,373 - INFO - Current Total PnL: -0.0390
+2025-02-05 15:05:21,303 - INFO - ----- New Cycle -----
+2025-02-05 15:05:21,560 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:05:21,562 - INFO - Market Snapshot -> Best Bid: 2771.51, Best Ask: 2771.52, Volatility: 0.000003608134900947676631733907267
+2025-02-05 15:05:21,818 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:22,077 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:22,079 - INFO - RL entry decision: BUY at 2771.46, SELL at 2771.57
+2025-02-05 15:05:22,336 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/orders?market=ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:05:22,593 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/orders?market=ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:05:22,852 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:23,118 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/orders "HTTP/1.1 201 Created"
+2025-02-05 15:05:23,120 - INFO - Order created with ID: 1738767922990201709278190000 at price 2771.46 for size 0.1 (tag: RL_ENTRY)
+2025-02-05 15:05:23,376 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:23,658 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/orders "HTTP/1.1 201 Created"
+2025-02-05 15:05:23,660 - INFO - Order created with ID: 1738767923530201709224460000 at price 2771.57 for size 0.1 (tag: RL_ENTRY)
+2025-02-05 15:05:23,665 - INFO - Logged trade: {'trade_type': 'entry', 'side': 'both', 'price': 2771.515, 'order_size': 0.1, 'profit': 0.0, 'additional_info': 'Chosen offset: 0.05'}
+2025-02-05 15:05:23,924 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:24,182 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:05:24,183 - INFO - Current Total PnL: 0.0155
+2025-02-05 15:05:28,238 - INFO - ----- New Cycle -----
+2025-02-05 15:05:28,494 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:05:28,495 - INFO - Market Snapshot -> Best Bid: 2769.77, Best Ask: 2770.86, Volatility: 0.0003934570617420762620857194940
+2025-02-05 15:05:28,750 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:29,009 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:29,011 - INFO - RL entry decision: BUY at 2769.72, SELL at 2770.91
+2025-02-05 15:05:29,269 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/orders?market=ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:05:29,526 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/orders?market=ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:05:29,785 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:30,056 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/orders "HTTP/1.1 201 Created"
+2025-02-05 15:05:30,057 - INFO - Order created with ID: 1738767929920201709184850000 at price 2769.72 for size 0.1 (tag: RL_ENTRY)
+2025-02-05 15:05:30,314 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:30,588 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/orders "HTTP/1.1 201 Created"
+2025-02-05 15:05:30,590 - INFO - Order created with ID: 1738767930460201709184850000 at price 2770.91 for size 0.1 (tag: RL_ENTRY)
+2025-02-05 15:05:30,593 - INFO - Logged trade: {'trade_type': 'entry', 'side': 'both', 'price': 2770.315, 'order_size': 0.1, 'profit': 0.0, 'additional_info': 'Chosen offset: 0.05'}
+2025-02-05 15:05:30,851 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:31,111 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:05:31,113 - INFO - Current Total PnL: 0.0388
+2025-02-05 15:05:34,795 - INFO - ----- New Cycle -----
+2025-02-05 15:05:35,053 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:05:35,054 - INFO - Market Snapshot -> Best Bid: 2770.61, Best Ask: 2770.72, Volatility: 0.00003970166007077723218072195664
+2025-02-05 15:05:35,309 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:35,566 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:35,825 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:35,827 - INFO - LONG position: entry 2769.61156846, profit target 2797.3076841446, stop loss 2755.76351061770, best_bid 2770.61
+2025-02-05 15:05:36,084 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:36,339 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:05:36,341 - INFO - Current Total PnL: -0.0172
+2025-02-05 15:05:40,543 - INFO - ----- New Cycle -----
+2025-02-05 15:05:40,799 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:05:40,800 - INFO - Market Snapshot -> Best Bid: 2770.9, Best Ask: 2770.91, Volatility: 0.000003608929212657958320476523013
+2025-02-05 15:05:41,055 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:41,312 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:41,568 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:41,570 - INFO - LONG position: entry 2769.61156846, profit target 2797.3076841446, stop loss 2755.76351061770, best_bid 2770.9
+2025-02-05 15:05:41,828 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:42,083 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:05:42,084 - INFO - Current Total PnL: -0.0392
+2025-02-05 15:05:45,484 - INFO - ----- New Cycle -----
+2025-02-05 15:05:45,739 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:05:45,741 - INFO - Market Snapshot -> Best Bid: 2767.84, Best Ask: 2767.85, Volatility: 0.000003612919076032075495557012766
+2025-02-05 15:05:45,997 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:46,253 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:46,512 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:46,513 - INFO - LONG position: entry 2769.61156846, profit target 2797.3076841446, stop loss 2755.76351061770, best_bid 2767.84
+2025-02-05 15:05:46,770 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:47,026 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:05:47,029 - INFO - Current Total PnL: -0.1692
+2025-02-05 15:05:51,680 - INFO - ----- New Cycle -----
+2025-02-05 15:05:51,938 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:05:51,939 - INFO - Market Snapshot -> Best Bid: 2769.91, Best Ask: 2769.92, Volatility: 0.000003610219086145242724054709260
+2025-02-05 15:05:52,197 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:52,453 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:52,712 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:52,713 - INFO - LONG position: entry 2769.61156846, profit target 2797.3076841446, stop loss 2755.76351061770, best_bid 2769.91
+2025-02-05 15:05:52,968 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:53,226 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:05:53,228 - INFO - Current Total PnL: 0.0818
+2025-02-05 15:05:56,893 - INFO - ----- New Cycle -----
+2025-02-05 15:05:57,150 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:05:57,151 - INFO - Market Snapshot -> Best Bid: 2770.9, Best Ask: 2770.91, Volatility: 0.000003608929212657958320476523013
+2025-02-05 15:05:57,407 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:57,664 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:57,922 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:57,923 - INFO - LONG position: entry 2769.61156846, profit target 2797.3076841446, stop loss 2755.76351061770, best_bid 2770.9
+2025-02-05 15:05:58,181 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:05:58,438 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:05:58,440 - INFO - Current Total PnL: 0.0498
+2025-02-05 15:06:02,441 - INFO - ----- New Cycle -----
+2025-02-05 15:06:02,697 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:06:02,698 - INFO - Market Snapshot -> Best Bid: 2769.85, Best Ask: 2769.95, Volatility: 0.00003610238636773890754178851222
+2025-02-05 15:06:02,955 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:03,215 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:03,472 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:03,473 - INFO - LONG position: entry 2769.61156846, profit target 2797.3076841446, stop loss 2755.76351061770, best_bid 2769.85
+2025-02-05 15:06:03,731 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:03,987 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:06:03,989 - INFO - Current Total PnL: -0.0522
+2025-02-05 15:06:07,785 - INFO - ----- New Cycle -----
+2025-02-05 15:06:08,041 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:06:08,042 - INFO - Market Snapshot -> Best Bid: 2770.75, Best Ask: 2770.91, Volatility: 0.00005774443036923954194230609601
+2025-02-05 15:06:08,298 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:08,554 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:08,811 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:09,070 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:09,328 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:06:09,329 - INFO - Current Total PnL: 0.0000
+2025-02-05 15:06:13,395 - INFO - ----- New Cycle -----
+2025-02-05 15:06:13,654 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:06:13,655 - INFO - Market Snapshot -> Best Bid: 2772.15, Best Ask: 2772.16, Volatility: 0.000003607301900507006282116259733
+2025-02-05 15:06:13,911 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:14,170 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:14,173 - INFO - RL entry decision: BUY at 2772.10, SELL at 2772.21
+2025-02-05 15:06:14,432 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/orders?market=ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:06:14,688 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/orders?market=ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:06:14,946 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:15,223 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/orders "HTTP/1.1 201 Created"
+2025-02-05 15:06:15,225 - INFO - Order created with ID: 1738767975090201709190190002 at price 2772.10 for size 0.1 (tag: RL_ENTRY)
+2025-02-05 15:06:15,482 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:15,753 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/orders "HTTP/1.1 201 Created"
+2025-02-05 15:06:15,754 - INFO - Order created with ID: 1738767975620201709235950000 at price 2772.21 for size 0.1 (tag: RL_ENTRY)
+2025-02-05 15:06:15,757 - INFO - Logged trade: {'trade_type': 'entry', 'side': 'both', 'price': 2772.155, 'order_size': 0.1, 'profit': 0.0, 'additional_info': 'Chosen offset: 0.05'}
+2025-02-05 15:06:16,015 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:16,273 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:06:16,276 - INFO - Current Total PnL: 0.0986
+2025-02-05 15:06:19,393 - INFO - ----- New Cycle -----
+2025-02-05 15:06:19,651 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:06:19,654 - INFO - Market Snapshot -> Best Bid: 2772.69, Best Ask: 2773.07, Volatility: 0.0001370416318051989267476414414
+2025-02-05 15:06:19,911 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:20,170 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:20,427 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:20,428 - INFO - SHORT position: entry 2773.2543998, profit target 2745.521855802, stop loss 2787.1206717990, best_ask 2773.07
+2025-02-05 15:06:20,686 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:20,943 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:06:20,945 - INFO - Current Total PnL: 0.0000
+2025-02-05 15:06:25,730 - INFO - ----- New Cycle -----
+2025-02-05 15:06:25,989 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:06:25,992 - INFO - Market Snapshot -> Best Bid: 2768.97, Best Ask: 2769.36, Volatility: 0.0001408366782044406887996923260
+2025-02-05 15:06:26,247 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:26,505 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:26,511 - INFO - RL entry decision: BUY at 2768.92, SELL at 2769.41
+2025-02-05 15:06:26,771 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/orders?market=ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:06:27,029 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/orders?market=ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:06:27,291 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:27,576 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/orders "HTTP/1.1 201 Created"
+2025-02-05 15:06:27,579 - INFO - Order created with ID: 1738767987440201709184850000 at price 2768.92 for size 0.1 (tag: RL_ENTRY)
+2025-02-05 15:06:27,839 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:28,113 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/orders "HTTP/1.1 201 Created"
+2025-02-05 15:06:28,115 - INFO - Order created with ID: 1738767987980201709190190000 at price 2769.41 for size 0.1 (tag: RL_ENTRY)
+2025-02-05 15:06:28,122 - INFO - Logged trade: {'trade_type': 'entry', 'side': 'both', 'price': 2769.165, 'order_size': 0.1, 'profit': 0.0, 'additional_info': 'Chosen offset: 0.05'}
+2025-02-05 15:06:28,378 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:28,637 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:06:28,639 - INFO - Current Total PnL: -0.0031
+2025-02-05 15:06:33,440 - INFO - ----- New Cycle -----
+2025-02-05 15:06:33,699 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:06:33,700 - INFO - Market Snapshot -> Best Bid: 2767.21, Best Ask: 2767.47, Volatility: 0.00009395303793534585558695353661
+2025-02-05 15:06:33,958 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:34,215 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:34,219 - INFO - RL entry decision: BUY at 2767.16, SELL at 2767.52
+2025-02-05 15:06:34,475 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/orders?market=ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:06:34,732 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/orders?market=ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:06:34,989 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:35,264 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/orders "HTTP/1.1 201 Created"
+2025-02-05 15:06:35,266 - INFO - Order created with ID: 1738767995130201709224460001 at price 2767.16 for size 0.1 (tag: RL_ENTRY)
+2025-02-05 15:06:35,524 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:35,801 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/orders "HTTP/1.1 201 Created"
+2025-02-05 15:06:35,803 - INFO - Order created with ID: 1738767995670201709261080000 at price 2767.52 for size 0.1 (tag: RL_ENTRY)
+2025-02-05 15:06:35,807 - INFO - Logged trade: {'trade_type': 'entry', 'side': 'both', 'price': 2767.34, 'order_size': 0.1, 'profit': 0.0, 'additional_info': 'Chosen offset: 0.05'}
+2025-02-05 15:06:36,062 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:36,321 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:06:36,322 - INFO - Current Total PnL: 0.0000
+2025-02-05 15:06:39,943 - INFO - ----- New Cycle -----
+2025-02-05 15:06:40,200 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:06:40,201 - INFO - Market Snapshot -> Best Bid: 2764.57, Best Ask: 2764.67, Volatility: 0.00003617133638619412432811742663
+2025-02-05 15:06:40,457 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:40,714 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:40,972 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:40,973 - INFO - LONG position: entry 2767.22151533, profit target 2794.8937304833, stop loss 2753.38540775335, best_bid 2764.57
+2025-02-05 15:06:41,228 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:41,486 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:06:41,488 - INFO - Current Total PnL: -0.3212
+2025-02-05 15:06:46,270 - INFO - ----- New Cycle -----
+2025-02-05 15:06:46,526 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:06:46,528 - INFO - Market Snapshot -> Best Bid: 2762.8, Best Ask: 2762.99, Volatility: 0.00006876844758848960963047817597
+2025-02-05 15:06:46,784 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:47,042 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:47,299 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:47,301 - INFO - LONG position: entry 2767.22151533, profit target 2794.8937304833, stop loss 2753.38540775335, best_bid 2762.8
+2025-02-05 15:06:47,558 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:47,817 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:06:47,818 - INFO - Current Total PnL: -0.6172
+2025-02-05 15:06:51,362 - INFO - ----- New Cycle -----
+2025-02-05 15:06:51,618 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:06:51,619 - INFO - Market Snapshot -> Best Bid: 2758.73, Best Ask: 2759.58, Volatility: 0.0003080653315960864829993240684
+2025-02-05 15:06:51,877 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:52,134 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:52,393 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:52,394 - INFO - LONG position: entry 2767.22151533, profit target 2794.8937304833, stop loss 2753.38540775335, best_bid 2758.73
+2025-02-05 15:06:52,657 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:52,913 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:06:52,915 - INFO - Current Total PnL: -0.7882
+2025-02-05 15:06:57,004 - INFO - ----- New Cycle -----
+2025-02-05 15:06:57,261 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:06:57,262 - INFO - Market Snapshot -> Best Bid: 2759.81, Best Ask: 2760.43, Volatility: 0.0002246279147283451444140109850
+2025-02-05 15:06:57,520 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:57,778 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:58,036 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:58,038 - INFO - LONG position: entry 2767.22151533, profit target 2794.8937304833, stop loss 2753.38540775335, best_bid 2759.81
+2025-02-05 15:06:58,295 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:06:58,554 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:06:58,556 - INFO - Current Total PnL: -0.7172
+2025-02-05 15:07:02,099 - INFO - ----- New Cycle -----
+2025-02-05 15:07:02,357 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:07:02,358 - INFO - Market Snapshot -> Best Bid: 2760.45, Best Ask: 2760.86, Volatility: 0.0001485154791163691225451930792
+2025-02-05 15:07:02,616 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:02,874 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:03,130 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:03,132 - INFO - LONG position: entry 2767.22151533, profit target 2794.8937304833, stop loss 2753.38540775335, best_bid 2760.45
+2025-02-05 15:07:03,390 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:03,650 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:07:03,653 - INFO - Current Total PnL: -0.6932
+2025-02-05 15:07:07,747 - INFO - ----- New Cycle -----
+2025-02-05 15:07:08,005 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:07:08,007 - INFO - Market Snapshot -> Best Bid: 2760.02, Best Ask: 2760.08, Volatility: 0.00002173873661709027010380246735
+2025-02-05 15:07:08,261 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:08,517 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:08,773 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:08,774 - INFO - LONG position: entry 2767.22151533, profit target 2794.8937304833, stop loss 2753.38540775335, best_bid 2760.02
+2025-02-05 15:07:09,031 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:09,290 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:07:09,292 - INFO - Current Total PnL: -0.6452
+2025-02-05 15:07:14,142 - INFO - ----- New Cycle -----
+2025-02-05 15:07:14,400 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:07:14,401 - INFO - Market Snapshot -> Best Bid: 2764.41, Best Ask: 2764.64, Volatility: 0.00008319693256526889791193785551
+2025-02-05 15:07:14,658 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:14,917 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:15,177 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:15,178 - INFO - LONG position: entry 2767.22151533, profit target 2794.8937304833, stop loss 2753.38540775335, best_bid 2764.41
+2025-02-05 15:07:15,434 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:15,692 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:07:15,694 - INFO - Current Total PnL: -0.1232
+2025-02-05 15:07:20,123 - INFO - ----- New Cycle -----
+2025-02-05 15:07:20,379 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:07:20,381 - INFO - Market Snapshot -> Best Bid: 2761.17, Best Ask: 2761.49, Volatility: 0.0001158861852802816034302310843
+2025-02-05 15:07:20,637 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:20,894 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:21,153 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:21,155 - INFO - LONG position: entry 2767.22151533, profit target 2794.8937304833, stop loss 2753.38540775335, best_bid 2761.17
+2025-02-05 15:07:21,412 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:21,671 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:07:21,673 - INFO - Current Total PnL: -0.7092
+2025-02-05 15:07:26,011 - INFO - ----- New Cycle -----
+2025-02-05 15:07:26,270 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:07:26,272 - INFO - Market Snapshot -> Best Bid: 2762.16, Best Ask: 2762.17, Volatility: 0.000003620348530953074852516051720
+2025-02-05 15:07:26,529 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:26,788 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:27,048 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:27,049 - INFO - LONG position: entry 2767.22151533, profit target 2794.8937304833, stop loss 2753.38540775335, best_bid 2762.16
+2025-02-05 15:07:27,305 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:27,562 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:07:27,564 - INFO - Current Total PnL: -0.5662
+2025-02-05 15:07:30,963 - INFO - ----- New Cycle -----
+2025-02-05 15:07:31,222 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:07:31,223 - INFO - Market Snapshot -> Best Bid: 2759.53, Best Ask: 2760.37, Volatility: 0.0003043533397344154785412779217
+2025-02-05 15:07:31,481 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:31,741 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:32,000 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:32,001 - INFO - LONG position: entry 2767.22151533, profit target 2794.8937304833, stop loss 2753.38540775335, best_bid 2759.53
+2025-02-05 15:07:32,258 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:32,515 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:07:32,516 - INFO - Current Total PnL: -0.7842
+2025-02-05 15:07:36,875 - INFO - ----- New Cycle -----
+2025-02-05 15:07:37,132 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:07:37,134 - INFO - Market Snapshot -> Best Bid: 2760.16, Best Ask: 2760.43, Volatility: 0.00009781563202483792493193662272
+2025-02-05 15:07:37,414 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/auth "HTTP/1.1 200 OK"
+2025-02-05 15:07:37,674 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:37,931 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:38,190 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:38,192 - INFO - LONG position: entry 2767.22151533, profit target 2794.8937304833, stop loss 2753.38540775335, best_bid 2760.16
+2025-02-05 15:07:38,451 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:38,711 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:07:38,712 - INFO - Current Total PnL: -0.5942
+2025-02-05 15:07:42,685 - INFO - ----- New Cycle -----
+2025-02-05 15:07:42,941 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:07:42,943 - INFO - Market Snapshot -> Best Bid: 2760.74, Best Ask: 2761.06, Volatility: 0.0001159042341265529356369299866
+2025-02-05 15:07:43,199 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:43,458 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:43,714 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:43,715 - INFO - LONG position: entry 2767.22151533, profit target 2794.8937304833, stop loss 2753.38540775335, best_bid 2760.74
+2025-02-05 15:07:43,971 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:44,226 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:07:44,227 - INFO - Current Total PnL: -0.5342
+2025-02-05 15:07:48,525 - INFO - ----- New Cycle -----
+2025-02-05 15:07:48,783 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:07:48,784 - INFO - Market Snapshot -> Best Bid: 2762.99, Best Ask: 2763, Volatility: 0.000003619260983099860839415199810
+2025-02-05 15:07:49,039 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:49,299 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:49,559 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:49,560 - INFO - LONG position: entry 2767.22151533, profit target 2794.8937304833, stop loss 2753.38540775335, best_bid 2762.99
+2025-02-05 15:07:49,817 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:50,074 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:07:50,075 - INFO - Current Total PnL: -0.3912
+2025-02-05 15:07:54,725 - INFO - ----- New Cycle -----
+2025-02-05 15:07:54,983 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:07:54,984 - INFO - Market Snapshot -> Best Bid: 2764.34, Best Ask: 2764.35, Volatility: 0.000003617493474946144565891739273
+2025-02-05 15:07:55,240 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:55,498 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:55,754 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:55,755 - INFO - LONG position: entry 2767.22151533, profit target 2794.8937304833, stop loss 2753.38540775335, best_bid 2764.34
+2025-02-05 15:07:56,011 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:07:56,269 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:07:56,271 - INFO - Current Total PnL: -0.2882
+2025-02-05 15:07:59,506 - INFO - ----- New Cycle -----
+2025-02-05 15:07:59,763 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:07:59,765 - INFO - Market Snapshot -> Best Bid: 2763.85, Best Ask: 2764.22, Volatility: 0.0001338622701955655409573323058
+2025-02-05 15:08:00,020 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:00,279 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:00,534 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:00,535 - INFO - LONG position: entry 2767.22151533, profit target 2794.8937304833, stop loss 2753.38540775335, best_bid 2763.85
+2025-02-05 15:08:00,793 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:01,050 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:08:01,051 - INFO - Current Total PnL: -0.3512
+2025-02-05 15:08:05,082 - INFO - ----- New Cycle -----
+2025-02-05 15:08:05,338 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:08:05,339 - INFO - Market Snapshot -> Best Bid: 2765.43, Best Ask: 2765.44, Volatility: 0.000003616067634929043712833604840
+2025-02-05 15:08:05,595 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:05,852 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:06,111 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:06,112 - INFO - LONG position: entry 2767.22151533, profit target 2794.8937304833, stop loss 2753.38540775335, best_bid 2765.43
+2025-02-05 15:08:06,367 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:06,623 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:08:06,624 - INFO - Current Total PnL: -0.1232
+2025-02-05 15:08:11,039 - INFO - ----- New Cycle -----
+2025-02-05 15:08:11,295 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:08:11,296 - INFO - Market Snapshot -> Best Bid: 2766.12, Best Ask: 2766.8, Volatility: 0.0002458014936055464384086522126
+2025-02-05 15:08:11,553 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:11,810 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:12,066 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:12,067 - INFO - LONG position: entry 2767.22151533, profit target 2794.8937304833, stop loss 2753.38540775335, best_bid 2766.12
+2025-02-05 15:08:12,324 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:12,580 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:08:12,581 - INFO - Current Total PnL: -0.0362
+2025-02-05 15:08:17,568 - INFO - ----- New Cycle -----
+2025-02-05 15:08:17,824 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:08:17,826 - INFO - Market Snapshot -> Best Bid: 2767.21, Best Ask: 2767.42, Volatility: 0.00007588583157320362878819361005
+2025-02-05 15:08:18,081 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:18,340 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:18,598 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:18,599 - INFO - LONG position: entry 2767.22151533, profit target 2794.8937304833, stop loss 2753.38540775335, best_bid 2767.21
+2025-02-05 15:08:18,854 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:19,113 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:08:19,115 - INFO - Current Total PnL: -0.0562
+2025-02-05 15:08:22,406 - INFO - ----- New Cycle -----
+2025-02-05 15:08:22,662 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:08:22,664 - INFO - Market Snapshot -> Best Bid: 2766.35, Best Ask: 2766.36, Volatility: 0.000003614865048050593651212516109
+2025-02-05 15:08:22,922 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:23,179 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:23,439 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:23,440 - INFO - LONG position: entry 2767.22151533, profit target 2794.8937304833, stop loss 2753.38540775335, best_bid 2766.35
+2025-02-05 15:08:23,696 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:23,954 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:08:23,955 - INFO - Current Total PnL: -0.0422
+2025-02-05 15:08:27,760 - INFO - ----- New Cycle -----
+2025-02-05 15:08:28,017 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:08:28,019 - INFO - Market Snapshot -> Best Bid: 2768.39, Best Ask: 2768.4, Volatility: 0.000003612201293529283212836318517
+2025-02-05 15:08:28,277 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:28,535 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:28,542 - INFO - RL entry decision: BUY at 2768.34, SELL at 2768.45
+2025-02-05 15:08:28,799 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/orders?market=ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:08:29,056 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/orders?market=ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:08:29,314 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:29,584 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/orders "HTTP/1.1 201 Created"
+2025-02-05 15:08:29,586 - INFO - Order created with ID: 1738768109450201709235950000 at price 2768.34 for size 0.1 (tag: RL_ENTRY)
+2025-02-05 15:08:29,841 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:30,122 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/orders "HTTP/1.1 201 Created"
+2025-02-05 15:08:30,126 - INFO - Order created with ID: 1738768109990201709230340000 at price 2768.45 for size 0.1 (tag: RL_ENTRY)
+2025-02-05 15:08:30,131 - INFO - Logged trade: {'trade_type': 'entry', 'side': 'both', 'price': 2768.395, 'order_size': 0.1, 'profit': 0.0, 'additional_info': 'Chosen offset: 0.05'}
+2025-02-05 15:08:30,390 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:30,649 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:08:30,650 - INFO - Current Total PnL: 0.0000
+2025-02-05 15:08:33,738 - INFO - ----- New Cycle -----
+2025-02-05 15:08:33,995 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:08:33,997 - INFO - Market Snapshot -> Best Bid: 2768.99, Best Ask: 2769, Volatility: 0.000003611418583276603966421030013
+2025-02-05 15:08:34,253 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:34,511 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:34,768 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:34,770 - INFO - SHORT position: entry 2768.49191496, profit target 2740.8069958104, stop loss 2782.33437453480, best_ask 2769
+2025-02-05 15:08:35,025 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:35,281 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:08:35,282 - INFO - Current Total PnL: 0.0508
+2025-02-05 15:08:38,743 - INFO - ----- New Cycle -----
+2025-02-05 15:08:39,002 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:08:39,003 - INFO - Market Snapshot -> Best Bid: 2766.64, Best Ask: 2766.91, Volatility: 0.00009758654028607313569046995148
+2025-02-05 15:08:39,258 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:39,515 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:39,518 - INFO - RL entry decision: BUY at 2766.59, SELL at 2766.96
+2025-02-05 15:08:39,775 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/orders?market=ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:08:40,032 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/orders?market=ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:08:40,293 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:40,563 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/orders "HTTP/1.1 201 Created"
+2025-02-05 15:08:40,564 - INFO - Order created with ID: 1738768120430201709191980000 at price 2766.59 for size 0.1 (tag: RL_ENTRY)
+2025-02-05 15:08:40,820 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:41,099 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/orders "HTTP/1.1 201 Created"
+2025-02-05 15:08:41,100 - INFO - Order created with ID: 1738768120970201709188270001 at price 2766.96 for size 0.1 (tag: RL_ENTRY)
+2025-02-05 15:08:41,104 - INFO - Logged trade: {'trade_type': 'entry', 'side': 'both', 'price': 2766.775, 'order_size': 0.1, 'profit': 0.0, 'additional_info': 'Chosen offset: 0.05'}
+2025-02-05 15:08:41,361 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:41,618 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:08:41,619 - INFO - Current Total PnL: -0.1574
+2025-02-05 15:08:46,266 - INFO - ----- New Cycle -----
+2025-02-05 15:08:46,521 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:08:46,522 - INFO - Market Snapshot -> Best Bid: 2764.75, Best Ask: 2764.76, Volatility: 0.000003616957017891277888999206078
+2025-02-05 15:08:46,780 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:47,039 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:47,295 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:47,297 - INFO - LONG position: entry 2765.99374698, profit target 2793.6536844498, stop loss 2752.16377824510, best_bid 2764.75
+2025-02-05 15:08:47,552 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:47,810 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:08:47,811 - INFO - Current Total PnL: -0.1254
+2025-02-05 15:08:51,681 - INFO - ----- New Cycle -----
+2025-02-05 15:08:51,935 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:08:51,937 - INFO - Market Snapshot -> Best Bid: 2763.04, Best Ask: 2763.74, Volatility: 0.0002533120551207031942650150721
+2025-02-05 15:08:52,194 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:52,453 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:52,711 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:52,713 - INFO - LONG position: entry 2765.99374698, profit target 2793.6536844498, stop loss 2752.16377824510, best_bid 2763.04
+2025-02-05 15:08:52,972 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:53,239 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:08:53,240 - INFO - Current Total PnL: -0.3744
+2025-02-05 15:08:57,487 - INFO - ----- New Cycle -----
+2025-02-05 15:08:57,743 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:08:57,744 - INFO - Market Snapshot -> Best Bid: 2763.52, Best Ask: 2763.53, Volatility: 0.000003618566866592486045901520703
+2025-02-05 15:08:58,001 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:58,257 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:58,515 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:58,516 - INFO - LONG position: entry 2765.99374698, profit target 2793.6536844498, stop loss 2752.16377824510, best_bid 2763.52
+2025-02-05 15:08:58,774 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:08:59,032 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:08:59,033 - INFO - Current Total PnL: -0.2474
+2025-02-05 15:09:02,828 - INFO - ----- New Cycle -----
+2025-02-05 15:09:03,085 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:09:03,087 - INFO - Market Snapshot -> Best Bid: 2762.96, Best Ask: 2763.63, Volatility: 0.0002424641596355076095748010980
+2025-02-05 15:09:03,344 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:03,602 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:03,858 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:03,860 - INFO - LONG position: entry 2765.99374698, profit target 2793.6536844498, stop loss 2752.16377824510, best_bid 2762.96
+2025-02-05 15:09:04,115 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:04,374 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:09:04,376 - INFO - Current Total PnL: -0.0634
+2025-02-05 15:09:07,981 - INFO - ----- New Cycle -----
+2025-02-05 15:09:08,237 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:09:08,239 - INFO - Market Snapshot -> Best Bid: 2763.72, Best Ask: 2763.99, Volatility: 0.00009768964001367654960191471694
+2025-02-05 15:09:08,498 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:08,754 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:09,011 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:09,012 - INFO - LONG position: entry 2765.99374698, profit target 2793.6536844498, stop loss 2752.16377824510, best_bid 2763.72
+2025-02-05 15:09:09,270 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:09,526 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:09:09,527 - INFO - Current Total PnL: -0.2324
+2025-02-05 15:09:14,219 - INFO - ----- New Cycle -----
+2025-02-05 15:09:14,476 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:09:14,477 - INFO - Market Snapshot -> Best Bid: 2763.87, Best Ask: 2764.1, Volatility: 0.00008321318675752581870017384320
+2025-02-05 15:09:14,734 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:14,996 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:15,256 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:15,257 - INFO - LONG position: entry 2765.99374698, profit target 2793.6536844498, stop loss 2752.16377824510, best_bid 2763.87
+2025-02-05 15:09:15,513 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:15,770 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:09:15,771 - INFO - Current Total PnL: -0.2334
+2025-02-05 15:09:19,167 - INFO - ----- New Cycle -----
+2025-02-05 15:09:19,424 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:09:19,426 - INFO - Market Snapshot -> Best Bid: 2765.09, Best Ask: 2765.43, Volatility: 0.0001229540802673166356870601679
+2025-02-05 15:09:19,684 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:19,941 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:20,197 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:20,199 - INFO - LONG position: entry 2765.99374698, profit target 2793.6536844498, stop loss 2752.16377824510, best_bid 2765.09
+2025-02-05 15:09:20,454 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:20,714 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:09:20,716 - INFO - Current Total PnL: -0.0444
+2025-02-05 15:09:24,168 - INFO - ----- New Cycle -----
+2025-02-05 15:09:24,425 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:09:24,427 - INFO - Market Snapshot -> Best Bid: 2765.56, Best Ask: 2765.75, Volatility: 0.00006869981975336764708541014696
+2025-02-05 15:09:24,685 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:24,943 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:25,203 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:25,204 - INFO - LONG position: entry 2765.99374698, profit target 2793.6536844498, stop loss 2752.16377824510, best_bid 2765.56
+2025-02-05 15:09:25,460 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:25,719 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:09:25,720 - INFO - Current Total PnL: -0.0094
+2025-02-05 15:09:30,723 - INFO - ----- New Cycle -----
+2025-02-05 15:09:31,734 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:09:31,736 - INFO - Market Snapshot -> Best Bid: 2767.2, Best Ask: 2767.45, Volatility: 0.00009033994922894853333092426802
+2025-02-05 15:09:31,992 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:32,250 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:32,260 - INFO - RL entry decision: BUY at 2767.15, SELL at 2767.50
+2025-02-05 15:09:32,516 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/orders?market=ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:09:32,774 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/orders?market=ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:09:33,031 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:33,307 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/orders "HTTP/1.1 201 Created"
+2025-02-05 15:09:33,309 - INFO - Order created with ID: 1738768173180201709191980000 at price 2767.15 for size 0.1 (tag: RL_ENTRY)
+2025-02-05 15:09:33,564 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:33,834 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/orders "HTTP/1.1 201 Created"
+2025-02-05 15:09:33,835 - INFO - Order created with ID: 1738768173700201709278200001 at price 2767.50 for size 0.1 (tag: RL_ENTRY)
+2025-02-05 15:09:33,841 - INFO - Logged trade: {'trade_type': 'entry', 'side': 'both', 'price': 2767.325, 'order_size': 0.1, 'profit': 0.0, 'additional_info': 'Chosen offset: 0.05'}
+2025-02-05 15:09:34,097 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:34,357 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:09:34,358 - INFO - Current Total PnL: 0.0375
+2025-02-05 15:09:37,389 - INFO - ----- New Cycle -----
+2025-02-05 15:09:37,644 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:09:37,645 - INFO - Market Snapshot -> Best Bid: 2768.99, Best Ask: 2769, Volatility: 0.000003611418583276603966421030013
+2025-02-05 15:09:37,900 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:38,155 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:38,159 - INFO - RL entry decision: BUY at 2768.94, SELL at 2769.05
+2025-02-05 15:09:38,417 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/orders?market=ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:09:38,675 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/orders?market=ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:09:38,934 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:39,214 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/orders "HTTP/1.1 201 Created"
+2025-02-05 15:09:39,216 - INFO - Order created with ID: 1738768179080201709230340000 at price 2768.94 for size 0.1 (tag: RL_ENTRY)
+2025-02-05 15:09:39,471 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:39,742 - INFO - HTTP Request: POST https://api.prod.paradex.trade/v1/orders "HTTP/1.1 201 Created"
+2025-02-05 15:09:39,743 - INFO - Order created with ID: 1738768179610201709224460002 at price 2769.05 for size 0.1 (tag: RL_ENTRY)
+2025-02-05 15:09:39,748 - INFO - Logged trade: {'trade_type': 'entry', 'side': 'both', 'price': 2768.995, 'order_size': 0.1, 'profit': 0.0, 'additional_info': 'Chosen offset: 0.05'}
+2025-02-05 15:09:40,004 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:40,261 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:09:40,263 - INFO - Current Total PnL: -0.0052
+2025-02-05 15:09:43,367 - INFO - ----- New Cycle -----
+2025-02-05 15:09:43,623 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:09:43,624 - INFO - Market Snapshot -> Best Bid: 2771.29, Best Ask: 2772.24, Volatility: 0.0003427418991148239479176625724
+2025-02-05 15:09:43,882 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:44,139 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:44,393 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:44,394 - INFO - SHORT position: entry 2769.55193101, profit target 2741.8564116999, stop loss 2783.39969066505, best_ask 2772.24
+2025-02-05 15:09:44,652 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:44,908 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:09:44,909 - INFO - Current Total PnL: 0.3008
+2025-02-05 15:09:48,853 - INFO - ----- New Cycle -----
+2025-02-05 15:09:49,107 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:09:49,109 - INFO - Market Snapshot -> Best Bid: 2770.86, Best Ask: 2771.22, Volatility: 0.0001299151221202147930019054218
+2025-02-05 15:09:49,365 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:49,622 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:49,877 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:49,880 - INFO - SHORT position: entry 2769.55193101, profit target 2741.8564116999, stop loss 2783.39969066505, best_ask 2771.22
+2025-02-05 15:09:50,134 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:50,393 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:09:50,394 - INFO - Current Total PnL: 0.2828
+2025-02-05 15:09:53,582 - INFO - ----- New Cycle -----
+2025-02-05 15:09:53,837 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:09:53,838 - INFO - Market Snapshot -> Best Bid: 2771.28, Best Ask: 2771.77, Volatility: 0.0001767979722355021152614535319
+2025-02-05 15:09:54,094 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:54,349 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:54,605 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:54,606 - INFO - SHORT position: entry 2769.55193101, profit target 2741.8564116999, stop loss 2783.39969066505, best_ask 2771.77
+2025-02-05 15:09:54,862 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:09:55,120 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:09:55,121 - INFO - Current Total PnL: 0.2958
+2025-02-05 15:09:59,696 - INFO - ----- New Cycle -----
+2025-02-05 15:09:59,950 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:09:59,951 - INFO - Market Snapshot -> Best Bid: 2772.65, Best Ask: 2772.97, Volatility: 0.0001154063927928707700852204082
+2025-02-05 15:10:00,206 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:10:00,465 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:10:00,723 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:10:00,724 - INFO - SHORT position: entry 2769.55193101, profit target 2741.8564116999, stop loss 2783.39969066505, best_ask 2772.97
+2025-02-05 15:10:00,980 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:10:01,235 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:10:01,236 - INFO - Current Total PnL: 0.3168
+2025-02-05 15:10:04,407 - INFO - ----- New Cycle -----
+2025-02-05 15:10:04,663 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:10:04,665 - INFO - Market Snapshot -> Best Bid: 2772.98, Best Ask: 2773.18, Volatility: 0.00007212197268019674874147157673
+2025-02-05 15:10:04,921 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:10:05,178 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:10:05,434 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:10:05,436 - INFO - SHORT position: entry 2769.55193101, profit target 2741.8564116999, stop loss 2783.39969066505, best_ask 2773.18
+2025-02-05 15:10:05,691 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/positions "HTTP/1.1 200 OK"
+2025-02-05 15:10:05,945 - INFO - HTTP Request: GET https://api.prod.paradex.trade/v1/bbo/ETH-USD-PERP "HTTP/1.1 200 OK"
+2025-02-05 15:10:05,946 - INFO - Current Total PnL: 0.5598
